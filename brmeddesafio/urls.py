@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from currency_quotator.api import CurrencyRateAPIView
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('api/rates/', CurrencyRateAPIView.as_view()),
 ]

@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'currency_quotator',
+
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
