@@ -13,7 +13,7 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 @app.on_after_configure.connect
 def setup_periodic_tasks(sender, **kwargs):
     sender.add_periodic_task(
-        crontab(minute='0,2,4', hour=1),
+        crontab(minute='0,30', hour=10),
         fetch_and_save_currency_quotation.s(),
         name='fetch currency quotation')
 
