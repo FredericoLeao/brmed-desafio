@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path
 
 from currency_quotator.api import CurrencyRateAPIView
+from currency_quotator.views import QuotatorHome
 
 urlpatterns = [
+    path('', QuotatorHome.as_view()),
     path('api/rates/', CurrencyRateAPIView.as_view()),
 ]
