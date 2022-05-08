@@ -16,7 +16,7 @@ class CurrencyRateAPIView(APIView):
             except ValueError:
                 return Response(status=HTTP_400_BAD_REQUEST)
         if not end_date:
-            end_date = datetime.date.today()
+            end_date = datetime.date.today() - datetime.timedelta(days=1)
 
         if start_date:
             try:
@@ -24,7 +24,7 @@ class CurrencyRateAPIView(APIView):
             except ValueError:
                 return Response(status=HTTP_400_BAD_REQUEST)
         if not start_date:
-            start_date = datetime.date.today() - datetime.timedelta(days=4)
+            start_date = end_date - datetime.timedelta(days=4)
 
         diff_date = end_date - start_date
         if diff_date.days >= 5:
