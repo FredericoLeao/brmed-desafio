@@ -35,7 +35,7 @@
     _celery -A brmeddesafio worker -l info_
 - Executar o celery beat  
     _celery -A brmeddesafio beat -l info_
-- Executar função para preencher o banco de dados
+- Executar função para preencher o banco de dados  
     _./manage shell_  
     _from currency_quotator.utils import rates_initial_data_populate_  
     _rates_initial_data_populate()_

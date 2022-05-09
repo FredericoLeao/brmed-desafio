@@ -5,6 +5,7 @@ import datetime
 
 class CurrencyRateAPITestCase(TestCase):
     def setUp(self) -> None:
+        # populate with some fake data
         end_date = datetime.date.today()
         start_date = end_date - datetime.timedelta(days=20)
         i_date = start_date
@@ -21,7 +22,7 @@ class CurrencyRateAPITestCase(TestCase):
 
     def test_api(self):
         client = APIClient()
-        # Get status OK, and the 5 days limit 
+        # Get status OK, defaults to the last 5 days  
         res = client.get('/api/rates/')
         self.assertEqual(res.status_code, 200)
         res = res.json()
